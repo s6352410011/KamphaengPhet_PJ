@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>(☞ﾟヮﾟ)☞ สวัสดี จังหวัด กำแพงเพชร PHOTO 🙏🏻 ☜(ﾟヮﾟ☜)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@200&display=swap" rel="stylesheet">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: 'IBM Plex Sans Thai', sans-serif;
+    }
+
+    .w3-quarter img {
+        margin-bottom: -6px;
+        cursor: pointer
+    }
+
+    .w3-quarter img:hover {
+        opacity: 0.6;
+        transition: 0.3s
+    }
+</style>
+
+<body class="w3-light-grey">
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large"
+        style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+        <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a>
+        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">PORTFOLIO</a>
+        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT ME</a>
+        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+        <span class="w3-left w3-padding">(☞ﾟヮﾟ)☞ สวัสดี จังหวัด กำแพงเพชร PHOTO 🙏🏻 ☜(ﾟヮﾟ☜)</span>
+        <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+        id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+
+        <!-- Photo grid -->
+        <div class="w3-row w3-grayscale-min">
+            <div class="w3-quarter">
+                <img src="./img/Mogoju/Mo_2.jpg" style="width:100%" onclick="onClick(this)" alt="โมโกจู">
+                <img src="./img/Heritage/H_1.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="อุทยานประวัติศาสตร์กำแพงเพชร">
+                <img src="./img/Wat4/W_1.jpg" style=" width:100%" onclick="onClick(this)" alt="วัดพระสี่อิริยาบถ">
+            </div>
+
+            <div class="w3-quarter">
+                <img src="./img/WatB/W_1.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="วัดบรมธาตุนครชุมกำแพงเพชร">
+                <img src="./img/Lake/L_1.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="บ่อน้ำพุร้อนพระร่วง (บึงสาป)">
+                <img src="./img/Emerald/E_1.jpg" style="width:100%" onclick="onClick(this)" alt="สระมรกตกำแพงเพชร">
+            </div>
+
+            <div class="w3-quarter">
+                <img src="./img/Ping/P_1.jpg" style="width:100%" onclick="onClick(this)" alt="ริมแม่น้ำปิง">
+                <img src="./img/Bridge/B_2.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="สะพานนาบุญ วัดทุ่งสนุ่นรัตนาราม">
+                <img src="./img/Bridge/B_1.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="สะพานนาบุญ วัดทุ่งสนุ่นรัตนาราม">
+            </div>
+
+            <div class="w3-quarter">
+                <img src="./img/Banana/B_1.jpg" style="width:100%" onclick="onClick(this)" alt="ตลาดมอกล้วยไข่">
+                <img src="./img/Koh/K_1.jpg" style="width:100%" onclick="onClick(this)" alt="แก่งเกาะร้อย">
+                <img src="./img/Kaeng/K_1.jpg" style="width:100%" onclick="onClick(this)" alt="แก่งผาคอยนาง">
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="w3-center w3-padding-32">
+            <div class="w3-bar">
+                <a href="./KP.html">HOME</a>
+            </div>
+        </div>
+
+        <!-- Modal for full size images on click-->
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption"></p>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-32 w3-grey">
+            <div class="w3-row-padding">
+                <div class="w3-third">
+                    <h3>INFO</h3>
+                    <p>This website has been created for teaching purposes only.🙏🏻</p>
+                    <p>เว็บไซต์ตัวนี้ถูกจัดทำขึ้นมาเพื่อเป็นสื่อการเรียนการสอนเท่านั้น 🙏🏻</p>
+                </div>
+
+                <div class="w3-third">
+                    <h3>BLOG POSTS</h3>
+                    <ul class="w3-ul">
+                        <li class="w3-padding-16 w3-hover-black">
+                            <img src="./img/TH_PS.jpg" class="w3-left w3-margin-right" style="width:50px">
+                            <span class="w3-large">ท่องเที่ยวในไทย</span><br>
+                            <span>สิ่งที่น่าสนใจ</span>
+                        </li>
+                        <li class="w3-padding-16 w3-hover-black">
+                            <img src="./img/CH_PS.jpg" class="w3-left w3-margin-right" style="width:50px">
+                            <span class="w3-large">เชียงใหม่</span><br>
+                            <span>สถานที่น่าสนใจ</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="w3-third">
+                    <h3>POPULAR TAGS</h3>
+                    <p>
+                        <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span
+                            class="w3-tag w3-dark-grey w3-small w3-margin-bottom">THAILAND</span> <span
+                            class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Kamphaeng Phet</span>
+                        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Bangkok</span> <span
+                            class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Chiang Mai</span> <span
+                            class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Phuket</span>
+                        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Sea</span> <span
+                            class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Waterfall</span> <span
+                            class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Family</span>
+                        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">News</span> <span
+                            class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Food</span> <span
+                            class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Shopping</span>
+                        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Tradition</span> <span
+                            class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Heritage</span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp"
+                title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
+
+        <!-- End page content -->
+    </div>
+
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+    </script>
+
+
+</body>
+
+</html>
